@@ -1,0 +1,15 @@
+java:
+
+hashmap
+hashset
+
+difference between 
+string var1="fdas"
+string s1=new String()
+
+add values to hashmap
+loop the values to print the values after converting to lists inside hash map
+
+2. read jsons in java
+how many ways can be read
+

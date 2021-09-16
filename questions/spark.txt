@@ -1,0 +1,68 @@
+reading parquet file outside spark
+kafka reading and writing avro file
+reading avro file outside spark
+security vunerabilities in scala or python code
+
+partition pruning
+
+mappartition and map 
+accumulator and broadcast 
+broadcast in executor
+accumulator in ?
+
+serDe in persist
+persist and cache difference
+partition in to buckets, only buckets 
+
+buckets how internally it will store 
+dag and rdd lineage difference 
+
+limit and show and similar in spark 
+cluster by in spark
+mapside join 
+
+sort map join 
+sort merge join
+bucket join
+currying function
+higher order funciton and its example
+companion object and its advantages
+hive and drill difference
+cloudera and mapr difference
+
+higher order functions
+
+agg sum count
+
+case class and class
+case class and object differences
+
+spark architecture
+
+different types of submit of spark 
+
+dataframe and dataset differences 
+
+what is the difference between dynamic and static partitioning in hive
+
+memory overhead in driver and executor difference and importance
+
+shuffle partitioning
+
+
+groupbykey and reducebykey differences 
+traits different but same methods and extends what to do
+traints and classes 
+class and object 
+companion object 
+clousers
+spark architecture 
+csv file with address comma no quotes, or escape characters
+coalesce and repartitoin 
+reducebykey what operations you can do
+
+
+udf in hive for dealing with junk characters in hive 
+managed and external table difference	
+traits and difference 
+two traits have same method how to do		
