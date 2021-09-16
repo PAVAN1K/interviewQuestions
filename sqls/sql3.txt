@@ -1,0 +1,33 @@
++-------------------+--------+------------------+
+|               stime|location|       temperature|
++-------------------+--------+------------------+
+|2019-09-09 12:00:00|   rshade|18.830184076113213|
+|2019-09-09 12:00:00|     rsun|              null|
+|2019-09-09 12:30:00|   rshade|              null|
+|2019-09-09 12:30:00|     rsun| 21.55237663805009|
+|2019-09-09 13:00:00|   rshade| 18.59059750682235|
+|2019-09-09 13:00:00|     rsun|              null|
+|2019-09-09 13:30:00|   rshade|              null|
+|2019-09-09 13:30:00|     rsun|22.587784977960474|
+|2019-09-09 14:00:00|   rshade|19.101003724324197|
+|2019-09-09 14:00:00|     rsun|20.548896316341516|
++-------------------+--------+------------------+
+
+
+
+data in rows 10000000000
+
+1. need null be replaced with last non null value depends on location
+2. same as above with out location dependency
+
+
+
+select rnm,lnm
+from 
+(
+select rnm,last(temperature) over (order by stime) as lnm
+from
+testtable b
+where temparature is not null 
+and brnm < a.rnm
+)

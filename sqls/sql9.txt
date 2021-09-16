@@ -1,0 +1,41 @@
+TableName: User_activity
+
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| username      | varchar |
+| activity      | varchar |
+| startDate     | Date    |
+| endDate       | Date    |
++---------------+---------+
+Notes :
+This table does not contain a primary key.
+This table contains information about the activity performed of each user in a period of time.
+A person with a username performed an activity from startDate to endDate.
+
+Example as below :
+
+User_activity:
++------------+--------------+-------------+-------------+
+| username   | activity     | startDate   | endDate     |
++------------+--------------+-------------+-------------+
+| Alice      | Travel       | 2020-02-12  | 2020-02-20  |
+| Alice      | Dancing      | 2020-02-21  | 2020-02-23  |
+| Alice      | Travel       | 2020-02-24  | 2020-02-28  |
+| Bob        | Travel       | 2020-02-11  | 2020-02-18  |
++------------+sa--------------+-------------+-------------+
+
+
+
+
+Expected result :
+
+:
++------------+--------------+-------------+-------------+
+| username   | activity     | startDate   | endDate     |
++------------+--------------+-------------+-------------+
+| Alice      | Dancing      | 2020-02-21  | 2020-02-23  |
+| Bob        | Travel       | 2020-02-11  | 2020-02-18  |
++------------+--------------+-------------+-------------+
+explanations :
+The most recent activity of Alice is Travel from 2020-02-24 to 2020-02-28, before that she was dancing from 2020-02-21 to 2020-02-23.Bob  only has one record, we just take that one.

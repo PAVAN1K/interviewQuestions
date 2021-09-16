@@ -1,0 +1,50 @@
+service |Plan |Date
+------------------------------
+1001 Small Data 22/07			
+1001 Small Data 23/07		
+1001 Small Data 24/07       
+1001 Medium Data 25/07		
+1001 Small Data 26/07		
+1001 Small Data 27/07       
+1001 Extra Large Data 28/07 
+1002 Small Data 27/07
+1002 Small Data 28/07
+1003 XSmall Data 27/07
+1003 Small Data 28/07
+
+
+select 
+service,min(rnum)
+from 
+(
+select 
+service,plan,date,planlag,rnum, case when plan <> planlag then 'change' else 'nochange' end as changeind
+from 
+(
+select 
+service,plan,date, planlag, row_number() over (partition by service order by service, date desc) as rnum
+from 
+(
+select
+service,plan,date,lag(plan) over (partition by service order by service,date desc) as planlag
+from 
+serviceTable st
+) a 
+) b
+) c
+where changeind='change'
+group by service
+;
+
+
+select 
+*,case when plan <> planlag then 'change' else 'nochange' end as changeind
+(
+select
+service,plan,date,lag(plan) over (partition by service order by service,date desc) as planlag
+from 
+serviceTable st
+) b
+where changeind='change'
+;
+

@@ -1,0 +1,35 @@
+sql:
+----
+customer Table :
+
+custid, custname, city, ...
+
+Connection Table:
+
+connectionId, custid, ....
+
+
+
+select cust.name,cust.city,count(*) as no_of_connections from 
+customer cust 
+inner join 
+connection conn
+on cust.custid=conn.custid 
+group by cust.name,cust.city
+having count(*) > 3
+;
+
+
+
+
+select *
+from 
+(
+select cust.name,cust.city,count() over (partition by cust.custid ) as countnm 
+customer cust 
+inner join 
+connection conn
+on cust.custid=conn.custid 
+)
+where countnm>3
+;

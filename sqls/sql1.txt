@@ -1,0 +1,16 @@
+input Data:
+username wizardid timeStampValue
+user1 wizard1 timestamp		2
+user1 wizard1 timestamp		1
+
+
+select
+username,wizardid,timeStampValue
+from 
+(
+select 
+username,wizardid,timeStampValue,row_number() over (partition by username,wizardid order by timeStampValue desc) as rnm
+from data
+)
+where rnm=1
+;

@@ -1,0 +1,48 @@
+citydistance:
+df1
+city1,city2,distance
+hyd,blr,100
+hyd,pun,200
+hyd,mum,100
+blr,hyd,100
+
+df2
+city2,city1,distance
+blr,hyd,100
+pun,hyd,200
+mum,hyd,100
+hyd,blr,100
+
+
+result1: join df1 and df2 --> df1.city1=df2.city1 and df1.city2=df2.city2
+blr,hyd,100
+hyd,blr,100
+
+
+--city1 > city2 -- remove duplciates --> df3
+
+
+df1 - result1 : non duplicate records --> df4
+hyd,pun,200
+hyd,mum,100
+
+df3.union(df4) --> dfresult
+
+
+
+val df1=citydistance.join(citydistance
+
+
+select * from 
+(
+select cd.* from citydistance cd inner join citydistance cd1 on cd.city1=cd1.city2 and cd.city2 =cd1.city1
+where
+cd.city1>cd.city2
+) a
+union
+select * from 
+(select cd.* from citydistance 
+minus
+select cd.* from citydistance cd inner join citydistance cd1 on cd.city1=cd1.city2 and cd.city2 =cd1.city1
+) b
+;

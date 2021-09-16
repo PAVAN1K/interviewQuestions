@@ -1,0 +1,23 @@
+Municipal corp;
+| house no.(HOUSE_NO)| covid positive (CP)|
+|---------|------|
+100         | 0 |		1 0
+| 101       | 1    | 		00
+| 102       | 1    |           10
+| 102       | 0    |    
+| 111       | 0    |    
+| 103      | 1    |     01
+| 104       | 1    |      1 1  
+| 105      | 1|   
+|108       | 0 |
+Output: 103,104,105
+
+SELECT HOUSE_NO
+FROM
+(
+SELECT HOUSE_NO,LEAD() OVER(CP ORDER BY HOUSE_NO) AS LEADCP,
+LAG() OVER (CP ORDER BY HOSUE_NO) AS LAGCP,covid_positive as CP
+ FROM CORP 
+) a
+WHERE (a.LEADCP=1 OR a.LAGCP=1 ) and cp=1
+;

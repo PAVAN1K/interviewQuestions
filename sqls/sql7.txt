@@ -1,0 +1,24 @@
+
+emp:
+ID,SAL
+01,100       
+02,10000    
+03,5000     
+
+Output: emp
+id,sal,new_sal
+01,100,110
+02,10000,10000
+03,5000,5500
+
+Val df=spark.sql(“select * from emp”)
+df.withColumn(“new_sal”,func(col(“sal”).cast(“Double”))
+
+df.withColumn(“new_sal”, if col(“sal”)>10000).otherwise()
+def func(sal:Double){
+Sal match{
+Case when Sal>10000=> Sal
+Case when Sal<10000=>Sal+Sal*0.1
+}
+Return Sal
+
