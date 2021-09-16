@@ -1,0 +1,22 @@
+def firstHundredPrimeNos(n:Int):Unit={ //n = 100
+	
+	if (n<2) println("prime number give greater than 2")
+	
+	var listbuff:ListBuffer[Int]=ListBuffer(2)
+	
+	for (i <- Range(3,n+1)){ // 3 to 101 --> 3 to 100
+		var templistbuff:ListBuffer[Int]=ListBuffer() //temporary 
+		for (j <- Range(2,i-1)){  // 2 to 99
+			if ((i % j) == 0){
+				templistbuff.append(j)
+			}
+		}
+		if (templistbuff.length ==0){
+			listbuff.append(i)
+		}
+		templistbuff=ListBuffer() // keeping to none
+	}
+	
+	println("result n prime numbers",listbuff)
+}
+		
