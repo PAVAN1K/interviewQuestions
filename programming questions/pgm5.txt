@@ -1,0 +1,42 @@
+
+input1:
+9
+input2:
+foo
+bar
+foo
+bar
+baz
+foo
+bar
+bar
+foobar
+
+output:
+4
+3411
+
+
+
+in1=int(input())
+inpList=[]
+for i in range(in1):
+	k=input()
+	inpList.append(k)
+	
+print(inpList)
+
+dict1={}
+
+for i in inpList:
+	if i in dict1.keys():
+		dict1[i]=dict1[i]+1
+	else:
+		dict1[i]=1
+
+print(dict1.keys.len)
+print(dict1.values)
+
+
+print(set(inpList).len)
+

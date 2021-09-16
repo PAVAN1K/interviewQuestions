@@ -1,0 +1,35 @@
+list1.toDF.withColumn("rn",row_number() over (order by lit(1))).show()
+
+"MMLLSSLLMMSSM"
+
+S - 0
+M - 1
+L - 2
+
+0 - S
+1 - M 
+2 - S
+
+
+S - 
+
+[] 
+[S] * COUNTS
+[M] * COUNTM
+[L] * COUNTL
+
+FLATTEN 
+
+L1.flatten()
+
+[[sss],[mm],[ll]] --> [sssmmlll]
+SSSSMMMLLL
+
+
+
+sl=[s]
+ml=[m]
+ll=[l]
+
+[].append(sl).append(ml).append(ll)
+

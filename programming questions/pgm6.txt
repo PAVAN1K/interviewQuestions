@@ -1,0 +1,7 @@
+Question 4
+List = [a,b,c,d,e]   - true
+flag=True
+For i in Range(0,len(List)-1):
+	If List[i] in List[i+1: ]:
+		flag=False
+Return flag

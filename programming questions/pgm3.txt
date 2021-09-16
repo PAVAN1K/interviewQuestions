@@ -1,0 +1,15 @@
+def findresult(email,id,name):
+	regexPattern="""^[A-Za-z._]@[A-Za-z]\.com$""".r
+	emailid=str(email)
+	name=str(name)
+	id=str(id)
+	
+	if regexPattern.match(emailid):
+		return "pass"
+	else:
+		return "failed for" + id + "name" + name
+	
+
+dfresult=dfin.select("eid","ename","email").withColumn("result",findresult(col("email"),col("id"),col("name")))
+
+dfresult.show()

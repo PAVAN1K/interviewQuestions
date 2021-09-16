@@ -1,0 +1,17 @@
+
+
+def myMethod(a:String,n:Int):String={
+  if(n==1)a
+  else a+myMethod(a,n-1)
+}
+
+
+println(myMethod("hello",3))
+
+
+"hellohellohello"
+
+
+hello + myMethod("hello",2)
+hello + hello + myMethod("hello",1)
+hello + hello + hello
