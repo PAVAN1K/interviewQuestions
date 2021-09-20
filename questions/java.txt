@@ -13,3 +13,7 @@ loop the values to print the values after converting to lists inside hash map
 2. read jsons in java
 how many ways can be read
 
+oops principles -- all
+
+design patterns -- all how it is implemented in your project
+
