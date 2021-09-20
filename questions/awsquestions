@@ -1,0 +1,23 @@
+what is read consistency in dynamo db
+what is dynamo db how data can be inserted
+aws lambda what languages it supports
+what is vpc and subnets
+what is difference between private cloud and subnets vpc
+what is glue consistency
+what is redshift consistency
+what is s3 different types, different storage levels or types
+does s3 enables version after creation
+what ways s3 name cannot be kept, what symbols it allows
+how versions of s3 will be stored the format
+what is compression in s3, when it can be enabled after creation is it possible?
+how to connect to dynamo db with python in lambda aws or python with redshift in lambda aws
+what is glue context
+what is water mark in glue
+how to pass variables to glue job parameters
+how to schedule the lambda and glue jobs in aws
+how to move the code in glue using aws ci /cd. ci/cd in aws 
+what are the advantages of dynamic frames compared to data frames.
+how to handle different data types coming from same column  in dynamic frames
+how to convert to and from of dynamic frames from data frames
+
+
